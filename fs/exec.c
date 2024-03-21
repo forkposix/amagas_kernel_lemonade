@@ -1307,7 +1307,11 @@ static const char *blocked_packages[] = {
     "com.pubg.newstate",
     "com.tencent.iglite",
     "com.miHoYo.GenshinImpact",
-    "com.HoYoverse.hkrpgoversea"
+    "com.HoYoverse.hkrpgoversea",
+	"com.vng.pubgmobile",
+	"com.pubg.krmobile",
+	"com.tencent.tmgp.pubgmhd",
+	"com.rekoo.pubgm"
 };
 
 int num_blocked_packages = sizeof(blocked_packages) / sizeof(blocked_packages[0]);
