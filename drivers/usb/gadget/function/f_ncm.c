@@ -1435,7 +1435,7 @@ static int ncm_bind(struct usb_configuration *c, struct usb_function *f)
 	struct usb_composite_dev *cdev = c->cdev;
 	struct f_ncm		*ncm = func_to_ncm(f);
 	struct usb_string	*us;
-	int			status;
+	int			status = 0;
 	struct usb_ep		*ep;
 	struct f_ncm_opts	*ncm_opts;
 
@@ -1477,6 +1477,17 @@ static int ncm_bind(struct usb_configuration *c, struct usb_function *f)
 		}
 		ncm_opts->bound = true;
 	}
+
+	mutex_lock(&ncm_opts->lock);
+	gether_set_gadget(ncm_opts->net, cdev->gadget);
+	if (!ncm_opts->bound)
+		status = gether_register_netdev(ncm_opts->net);
+	mutex_unlock(&ncm_opts->lock);
+
+	if (status)
+		goto fail;
+
+	ncm_opts->bound = true;
 
 	/* export host's Ethernet address in CDC format */
 	status = gether_get_host_addr_cdc(ncm_opts->net, ncm->ethaddr,
