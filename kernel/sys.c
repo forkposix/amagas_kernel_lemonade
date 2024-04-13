@@ -73,6 +73,10 @@
 #include <asm/io.h>
 #include <asm/unistd.h>
 
+#if defined(CONFIG_KSU) && defined(CONFIG_KSU_SUSFS)
+#include <linux/susfs.h>
+#endif
+
 #include "uid16.h"
 
 #include <trace/hooks/sys.h>
