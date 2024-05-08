@@ -60,4 +60,12 @@ ccflags-y += -Wno-declaration-after-statement -Wno-unused-function
 
 ccflags-y += -DKSU_SUSFS
 
+ifeq ($(shell test -e $(srctree)/fs/susfs.c; echo $$?),0)
+ccflags-y += -DKSU_SUSFS
+$(info -- KSU_SUSFS is enabled.)
+else
+$(info -- You have not integrate susfs in your kernel.)
+$(info -- Read: https://gitlab.com/simonpunk/susfs4ksu)
+endif
+
 # Keep a new line here!! Because someone may append config
