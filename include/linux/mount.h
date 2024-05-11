@@ -115,4 +115,8 @@ extern unsigned int sysctl_mount_max;
 
 extern bool path_is_mountpoint(const struct path *path);
 
+#if defined(CONFIG_KSU) && defined(CONFIG_KSU_SUSFS)
+extern int path_umount(struct path *path, int flags);
+#endif
+
 #endif /* _LINUX_MOUNT_H */
