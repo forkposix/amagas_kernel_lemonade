@@ -16,4 +16,10 @@ config KSU_DEBUG
 	help
 	  Enable KernelSU debug mode.
 
+config KSU_SUSFS
+    bool "KernelSU addon - SUSFS"
+    depends on KSU
+    default y
+    help
+      Patch SUSFS to kernel and KernelSU
 endmenu
