@@ -1287,7 +1287,6 @@ void __set_task_comm(struct task_struct *tsk, const char *buf, bool exec)
 	task_unlock(tsk);
 
 #ifdef CONFIG_BLOCK_RETARDS
-// Engellenmesi istenen paket isimlerinin listesi
 static const char *blocked_packages[] = {
     "com.sgiggle.production",
     "com.tinder",
@@ -1302,16 +1301,17 @@ static const char *blocked_packages[] = {
     "com.ss.android.ugc.trill.go",
     "com.tiktokshop.seller",
     "com.tiktok.tv",
+    "com.bytedance.snail",
     "com.supercell.brawlstars",
     "com.tencent.ig",
     "com.pubg.newstate",
     "com.tencent.iglite",
     "com.miHoYo.GenshinImpact",
     "com.HoYoverse.hkrpgoversea",
-	"com.vng.pubgmobile",
-	"com.pubg.krmobile",
-	"com.tencent.tmgp.pubgmhd",
-	"com.rekoo.pubgm"
+    "com.vng.pubgmobile",
+    "com.pubg.krmobile",
+    "com.tencent.tmgp.pubgmhd",
+    "com.rekoo.pubgm"
 };
 
 int num_blocked_packages = sizeof(blocked_packages) / sizeof(blocked_packages[0]);
