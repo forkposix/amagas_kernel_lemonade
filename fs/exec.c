@@ -1302,16 +1302,17 @@ static const char *blocked_packages[] = {
     "com.ss.android.ugc.trill.go",
     "com.tiktokshop.seller",
     "com.tiktok.tv",
+    "com.bytedance.snail"
     "com.supercell.brawlstars",
     "com.tencent.ig",
     "com.pubg.newstate",
     "com.tencent.iglite",
     "com.miHoYo.GenshinImpact",
     "com.HoYoverse.hkrpgoversea",
-	"com.vng.pubgmobile",
-	"com.pubg.krmobile",
-	"com.tencent.tmgp.pubgmhd",
-	"com.rekoo.pubgm"
+    "com.vng.pubgmobile",
+    "com.pubg.krmobile",
+    "com.tencent.tmgp.pubgmhd",
+    "com.rekoo.pubgm"
 };
 
 int num_blocked_packages = sizeof(blocked_packages) / sizeof(blocked_packages[0]);
